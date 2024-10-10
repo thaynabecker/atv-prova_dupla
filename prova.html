@@ -1,52 +1,84 @@
 <script>
-
-    //ENTRADA
-
     const nomeCompleto = prompt(`Informe o seu nome completo: `);
     const cpf = prompt(`Informe o seu CPF: `);
     const salarioBruto = Number(prompt(`Informe o seu salário bruto: `));
     const codigoCargo = prompt(`Informe o seu código de cargo: `);
 
-
-    //PROCESSAMENTO
     let previdencia;
     let contribuicao;
     let aumento;
 
-    if (salarioBruto > 1412) {
+    if (salarioBruto >= 1412) {
         previdencia = 0.125;
     } else if (salarioBruto < 1412) {
         previdencia = 0;
     }
-
     if (codigoCargo == "abc123") {
         contribuicao = 0.075;
         aumento = 0.08; 
-    } else if (codigoCargo == "123abc"){
-        contribuicao = 0.065;
-        aumento = 0.075;
-    } else if (codigoCargo == "xyz999"){
-        contribuicao = 0.05;
-        aumento = 0.09;
-    } else if (codigoCargo == "9a8b7c"){
-        contribuicao = 0.045;
-        aumento = 0.05;
-    } else if (codigoCargo == "log456"){
-        contribuicao = 0.03;
-        aumento = 0.06;
-    } else {
-        document.write(`Informe um código de cargo válido!`);
-    }
-
-    let descontoContribuicao = salarioBruto * contribuicao;
-    let descontoPrevidencia = salarioBruto * previdencia;
-    let salarioLiquido = (salarioBruto - descontoContribuicao) - descontoPrevidencia;
-    let aumentoSalBruto = salarioBruto * aumento;
-    let salarioFinal = salarioBruto + aumentoSalBruto;
-    //SAIDA
-document.write(`Nome Completo: ${nomeCompleto} CPF: ${cpf} <br>
+        const descontoContribuicao = salarioBruto * contribuicao;
+        const descontoPrevidencia = salarioBruto * previdencia;
+        const salarioLiquido = (salarioBruto - descontoContribuicao) - descontoPrevidencia;
+        const aumentoSalBruto = salarioBruto * aumento;
+        const salarioFinal = salarioBruto + aumentoSalBruto;
+        document.write(`Nome Completo: ${nomeCompleto} CPF: ${cpf} <br>
                 Desconto contribuição sindical: R$${descontoContribuicao.toFixed(2).replace(".",",")} <br>
                 Desconto para imposto de previdência social: R$${descontoPrevidencia.toFixed(2).replace(".",",")} <br>
                 Salário final apos todos os descontos: R$${salarioLiquido.toFixed(2).replace(".",",")} <br>
                 Salário antigo: R$${salarioBruto.toFixed(2).replace(".",",")} e Salário Final: R$${salarioFinal.toFixed(2).replace(".",",")}`);
+    } else if (codigoCargo == "123abc"){
+        contribuicao = 0.065;
+        aumento = 0.075;
+        const descontoContribuicao = salarioBruto * contribuicao;
+        const descontoPrevidencia = salarioBruto * previdencia;
+        const salarioLiquido = (salarioBruto - descontoContribuicao) - descontoPrevidencia;
+        const aumentoSalBruto = salarioBruto * aumento;
+        const salarioFinal = salarioBruto + aumentoSalBruto;
+        document.write(`Nome Completo: ${nomeCompleto} CPF: ${cpf} <br>
+                Desconto contribuição sindical: R$${descontoContribuicao.toFixed(2).replace(".",",")} <br>
+                Desconto para imposto de previdência social: R$${descontoPrevidencia.toFixed(2).replace(".",",")} <br>
+                Salário final apos todos os descontos: R$${salarioLiquido.toFixed(2).replace(".",",")} <br>
+                Salário antigo: R$${salarioBruto.toFixed(2).replace(".",",")} e Salário Final: R$${salarioFinal.toFixed(2).replace(".",",")}`);
+    } else if (codigoCargo == "xyz999"){
+        contribuicao = 0.05;
+        aumento = 0.09;
+        const descontoContribuicao = salarioBruto * contribuicao;
+        const descontoPrevidencia = salarioBruto * previdencia;
+        const salarioLiquido = (salarioBruto - descontoContribuicao) - descontoPrevidencia;
+        const aumentoSalBruto = salarioBruto * aumento;
+        const salarioFinal = salarioBruto + aumentoSalBruto;
+        document.write(`Nome Completo: ${nomeCompleto} CPF: ${cpf} <br>
+                Desconto contribuição sindical: R$${descontoContribuicao.toFixed(2).replace(".",",")} <br>
+                Desconto para imposto de previdência social: R$${descontoPrevidencia.toFixed(2).replace(".",",")} <br>
+                Salário final apos todos os descontos: R$${salarioLiquido.toFixed(2).replace(".",",")} <br>
+                Salário antigo: R$${salarioBruto.toFixed(2).replace(".",",")} e Salário Final: R$${salarioFinal.toFixed(2).replace(".",",")}`);
+    } else if (codigoCargo == "9a8b7c"){
+        contribuicao = 0.045;
+        aumento = 0.05;
+        const descontoContribuicao = salarioBruto * contribuicao;
+        const descontoPrevidencia = salarioBruto * previdencia;
+        const salarioLiquido = (salarioBruto - descontoContribuicao) - descontoPrevidencia;
+        const aumentoSalBruto = salarioBruto * aumento;
+        const salarioFinal = salarioBruto + aumentoSalBruto;
+        document.write(`Nome Completo: ${nomeCompleto} CPF: ${cpf} <br>
+                Desconto contribuição sindical: R$${descontoContribuicao.toFixed(2).replace(".",",")} <br>
+                Desconto para imposto de previdência social: R$${descontoPrevidencia.toFixed(2).replace(".",",")} <br>
+                Salário final apos todos os descontos: R$${salarioLiquido.toFixed(2).replace(".",",")} <br>
+                Salário antigo: R$${salarioBruto.toFixed(2).replace(".",",")} e Salário Final: R$${salarioFinal.toFixed(2).replace(".",",")}`);
+    } else if (codigoCargo == "log456"){
+        contribuicao = 0.03;
+        aumento = 0.06;
+        const descontoContribuicao = salarioBruto * contribuicao;
+        const descontoPrevidencia = salarioBruto * previdencia;
+        const salarioLiquido = (salarioBruto - descontoContribuicao) - descontoPrevidencia;
+        const aumentoSalBruto = salarioBruto * aumento;
+        const salarioFinal = salarioBruto + aumentoSalBruto;
+        document.write(`Nome Completo: ${nomeCompleto} CPF: ${cpf} <br>
+                Desconto contribuição sindical: R$${descontoContribuicao.toFixed(2).replace(".",",")} <br>
+                Desconto para imposto de previdência social: R$${descontoPrevidencia.toFixed(2).replace(".",",")} <br>
+                Salário final apos todos os descontos: R$${salarioLiquido.toFixed(2).replace(".",",")} <br>
+                Salário antigo: R$${salarioBruto.toFixed(2).replace(".",",")} e Salário Final: R$${salarioFinal.toFixed(2).replace(".",",")}`);
+    } else {
+        document.write(`Informe um código de cargo válido!`);
+    }
 </script>
